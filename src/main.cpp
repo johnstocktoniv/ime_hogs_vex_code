@@ -21,8 +21,6 @@ int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
   
-Brain.Screen.print("Hello World");
-Drivetrain.driveFor(forward,10,inches);
-
-
+  Brain.Screen.print("Hello World");
+  Drivetrain.driveFor(forward,10,inches);
 }
