@@ -101,6 +101,8 @@ int rc_auto_loop_function_Controller1() {
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1RightShoulderControlMotorsStopped = true;
       }
+
+      if(BumpSensor.value() == 1 ) Brain.Screen.print("Hello World");
     }
     // wait before repeating the process
     wait(20, msec);
