@@ -88,13 +88,16 @@ int rc_auto_loop_function_Controller1() {
       }
       // check the ButtonR1/ButtonR2 status to control Arm
       if (Controller1.ButtonR1.pressing()) {
+       while(Controller1.ButtonR1.pressing())
+       {
         Arm.spin(forward);
         Controller1RightShoulderControlMotorsStopped = false;
+       }
       } else if (Controller1.ButtonL1.pressing()) {
         Arm.spin(reverse);
         Controller1RightShoulderControlMotorsStopped = false;
       } else if (!Controller1RightShoulderControlMotorsStopped) {
-        Arm.stop();
+        Arm.stop(hold);
         // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
         Controller1RightShoulderControlMotorsStopped = true;
       }
