@@ -20,6 +20,8 @@ controller Controller1 = controller(primary);
 // define variable for remote controller enable/disable
 bool RemoteControlCodeEnabled = true;
 // define variables used for controlling motors based on controller inputs
+bool Controller1LeftShoulderControlMotorsStopped = true;
+bool Controller1RightShoulderControlMotorsStopped = true;
 bool DrivetrainLNeedsToBeStopped_Controller1 = true;
 bool DrivetrainRNeedsToBeStopped_Controller1 = true;
 
@@ -71,6 +73,30 @@ int rc_auto_loop_function_Controller1() {
       if (DrivetrainRNeedsToBeStopped_Controller1) {
         RightDriveSmart.setVelocity(drivetrainRightSideSpeed, percent);
         RightDriveSmart.spin(forward);
+      }
+      // check the ButtonL1/ButtonL2 status to control Claw
+      if (Controller1.ButtonL2.pressing()) {
+        Claw.spin(forward);
+        Controller1LeftShoulderControlMotorsStopped = false;
+      } else if (Controller1.ButtonR2.pressing()) {
+        Claw.spin(reverse);
+        Controller1LeftShoulderControlMotorsStopped = false;
+      } else if (!Controller1LeftShoulderControlMotorsStopped) {
+        Claw.stop();
+        // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
+        Controller1LeftShoulderControlMotorsStopped = true;
+      }
+      // check the ButtonR1/ButtonR2 status to control Arm
+      if (Controller1.ButtonR1.pressing()) {
+        Arm.spin(forward);
+        Controller1RightShoulderControlMotorsStopped = false;
+      } else if (Controller1.ButtonL1.pressing()) {
+        Arm.spin(reverse);
+        Controller1RightShoulderControlMotorsStopped = false;
+      } else if (!Controller1RightShoulderControlMotorsStopped) {
+        Arm.stop();
+        // set the toggle so that we don't constantly tell the motor to stop when the buttons are released
+        Controller1RightShoulderControlMotorsStopped = true;
       }
     }
     // wait before repeating the process
