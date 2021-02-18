@@ -21,6 +21,14 @@ int main() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
 
-  Brain.Screen.print("THE HOGS");
+  while(true) {
+    if(Brain.Screen.pressing()) Auto();
+    wait(20, msec);
+  }
 
+}
+
+int Auto() {
+  Brain.Screen.print("Sup Noobs");
+  return 1;
 }
