@@ -102,11 +102,6 @@ int rc_auto_loop_function_Controller1() {
         Controller1RightShoulderControlMotorsStopped = true;
       }
 
-      ////////////////////
-      //BumpSensor testing
-      if( BumpSensor.pressing() ) Brain.Screen.print("Hi Bitch");
-      ////////////////////
-
     }
     // wait before repeating the process
     wait(20, msec);
