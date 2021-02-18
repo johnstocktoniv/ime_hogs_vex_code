@@ -19,7 +19,8 @@ using namespace vex;
 
 
 void Auto() {
-  
+  Drivetrain.driveFor( 5, inches);
+
 }
 
 
