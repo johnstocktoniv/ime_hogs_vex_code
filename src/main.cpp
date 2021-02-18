@@ -17,8 +17,16 @@
 
 using namespace vex;
 
+
+int Auto() {
+  Brain.Screen.print("Sup Noobs");
+  return 1;
+}
+
+
 int main() {
-  // Initializing Robot Configuration. DO NOT REMOVE!
+
+ // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
 
   //while(true) {
@@ -26,9 +34,4 @@ int main() {
     //wait(20, msec);
   //}
 
-}
-
-int Auto() {
-  Brain.Screen.print("Sup Noobs");
-  return 1;
 }
