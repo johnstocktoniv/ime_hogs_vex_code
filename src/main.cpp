@@ -17,6 +17,15 @@
 
 using namespace vex;
 
+void turnToHeading( double angle, turnType direction ) {
+  while(true) {
+    Drivetrain.turn(direction);
+    if(Gyro1.angle()==angle) {
+      Drivetrain.stop();
+      break;
+    }
+  }
+}
 
 void Auto() {
   int driveVelocity = 25;
