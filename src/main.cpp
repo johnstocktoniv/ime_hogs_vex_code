@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
-/*    Author:       C:\Users\chanc                                            */
+/*    Author:       Chance Wilson & John Stockton                             */
 /*    Created:      Thu Jan 21 2021                                           */
 /*    Description:  V5 project                                                */
 /*                                                                            */
@@ -53,7 +53,7 @@ int main() {
   vexcodeInit();
 
   while(true) {
-    if(Brain.Screen.pressing()) Auto();
+    if(Controller1.ButtonUp.pressing()) Auto();
   }
 
 }
