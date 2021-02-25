@@ -115,6 +115,5 @@ int rc_auto_loop_function_Controller1() {
  * This should be called at the start of your int main function.
  */
 void vexcodeInit( void ) {
-  Drivetrain.setDriveVelocity(10, percent);
   task rc_auto_loop_task_Controller1(rc_auto_loop_function_Controller1);
 }

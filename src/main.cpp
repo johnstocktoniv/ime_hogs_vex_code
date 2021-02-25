@@ -52,6 +52,9 @@ int main() {
  // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
 
+  Drivetrain.setDriveVelocity(50, percent);
+  Drivetrain.setTurnVelocity(50, percent);
+
   while(true) {
     if(Controller1.ButtonUp.pressing()) Auto();
   }
