@@ -8,7 +8,7 @@ extern drivetrain Drivetrain;
 extern motor Claw;
 extern motor Arm;
 extern bumper BumpSensor;
-
+extern inertial Gyro1;
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
  * 
