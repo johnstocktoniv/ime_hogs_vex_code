@@ -10,7 +10,7 @@ brain  Brain;
 // VEXcode device constructors
 motor LeftDriveSmart = motor(PORT1, ratio18_1, false);
 motor RightDriveSmart = motor(PORT10, ratio18_1, true);
-drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart, 622.3, 295, 40, mm, 1);
+drivetrain Drivetrain = drivetrain(LeftDriveSmart, RightDriveSmart);
 motor Claw = motor(PORT3, ratio18_1, false);
 motor Arm = motor(PORT8, ratio18_1, false);
 bumper BumpSensor = bumper(Brain.ThreeWirePort.A);
@@ -108,6 +108,7 @@ int rc_auto_loop_function_Controller1() {
   }
   return 0;
 }
+
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
